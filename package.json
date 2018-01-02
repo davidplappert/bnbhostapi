@@ -1,0 +1,25 @@
+{
+  "name": "bnbhostapi",
+  "version": "1.0.0",
+  "description": "This is a Node JS wrapper to Airbnb's API Endpoints for hosts.",
+  "main": "bnbhostapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidplappert/bnbhostapi.git"
+  },
+  "keywords": [
+    "airbnb",
+    "api",
+    "host",
+    "node"
+  ],
+  "author": "David Plappert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidplappert/bnbhostapi/issues"
+  },
+  "homepage": "https://github.com/davidplappert/bnbhostapi#readme"
+}
