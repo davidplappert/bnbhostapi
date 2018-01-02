@@ -44,3 +44,9 @@ bnbhostapi.getPayouts(true).then(function(payouts){
 - leave reviews
 - charge for extra services
 - stats and more details for reporting
+
+## Credits:
+- [Charles Proxy](https://www.charlesproxy.com/)
+- [Postman](https://www.getpostman.com/)
+- [airbnbapi.com](http://airbnbapi.com/)
+- [airapi](https://github.com/phamtrisi/airapi)
