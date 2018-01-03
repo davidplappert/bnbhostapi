@@ -24,18 +24,16 @@ I assume you have node installed (nvm maybe?) and that you have a listing on Air
 5) `export bnbhostapi_oauthtoken = xxxxxx` (output from the above script)
 6) `node examples/getPayouts.js` (to make sure your setup is correct).
 
-### This following sippet will return all your payout info along with all the reservation info. 
+### This following sippet will return all your payout info along with all the reservation info.
 
 ```
-var bnbhostapi = require('../bnbhostapi');
-bnbhostapi.getPayouts(true).then(function(payouts){
-  var index;
-  for (index = 0; index < payouts.length; ++index) {
-    var payout = payouts[index];
-    bnbhostapi.getReservation(payout['reservation']['confirmation_code']).then(function(reservation){
-      console.log(reservation);
-    });
-  }
+var bnbhostapi = require('bnbhostapi');
+bnbhostapi.getPayouts(true).
+each(function(payout){
+  bnbhostapi.getReservation(payout['reservation']['confirmation_code'])
+  .then(function(reservation){
+    console.log(reservation);
+  });
 });
 ```
 
