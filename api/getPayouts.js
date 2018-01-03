@@ -8,7 +8,7 @@ Sending pending true to get future payouts, false to get past payouts
 limit max is 20
 **/
 
-function getPayouts(pending=null,limit=20,offset=0){
+function getPayouts(pending=false,limit=20,offset=0){
   var options = {
     method: 'GET',
     url: 'https://api.airbnb.com/v2/payouts/',
@@ -22,8 +22,8 @@ function getPayouts(pending=null,limit=20,offset=0){
     gzip: true,
   };
   if (!pending){
-    //confirmation code: ['line_items']['reservation']['confirmation_code']
-    options['_format'] = 'for_mobile_transaction_history_payout';
+    //confirmation code: ['line_items'][0]['reservation']['confirmation_code']
+    options['qs']['_format'] = 'for_mobile_transaction_history_payout';
   }else{
     //confirmation code: ['reservation']['confirmation_code']
   }
