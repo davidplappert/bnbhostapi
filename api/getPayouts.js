@@ -21,7 +21,7 @@ function getPayouts(pending=null,limit=20,offset=0){
     },
     gzip: true,
   };
-  if (pending){
+  if (!pending){
     //confirmation code: ['line_items']['reservation']['confirmation_code']
     options['_format'] = 'for_mobile_transaction_history_payout';
   }else{

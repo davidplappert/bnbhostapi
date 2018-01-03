@@ -1,6 +1,6 @@
 {
   "name": "bnbhostapi",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "This is a Node JS wrapper to Airbnb's API Endpoints for hosts.",
   "main": "bnbhostapi.js",
   "scripts": {
