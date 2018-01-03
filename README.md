@@ -9,6 +9,7 @@ I, David Plappert, am an Airbnb Superhost. I, also, want to be able to build too
 - Get listing details
 - Get messages
 - Get message details
+- Send messages
 - Get calendar for a listing
 - Update calendar for a listing (change prices, availbility, notes)
 - get Payouts (used to get a list of reservations, past and future - also gives you exact $ for accounting)
@@ -38,7 +39,6 @@ each(function(payout){
 ```
 
 ### Forward looking features:
-- send messages
 - leave reviews
 - charge for extra services
 - stats and more details for reporting
