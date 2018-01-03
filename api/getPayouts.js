@@ -27,7 +27,11 @@ function getPayouts(pending=null,limit=20,offset=0){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['payouts']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['payouts']);
+        }
       }
     });
   });

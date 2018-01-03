@@ -1,11 +1,9 @@
 var bnbhostapi = require('../bnbhostapi');
 
-bnbhostapi.getMessageThreads().then(function(messages){
-  var index;
-  for (index = 0; index < messages.length; ++index) {
-    var message = messages[index];
-    bnbhostapi.getMessageThread(message['id']).then(function(message_detailed){
-      console.log(message_detailed);
-    });
-  }
+bnbhostapi.getMessageThreads(50,0,false)
+.each(function(message){
+  console.log(message.id + ',' + message.other_user.first_name);
+})
+.catch(function(err){
+  console.log(err);
 });

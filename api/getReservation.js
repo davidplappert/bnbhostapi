@@ -18,7 +18,11 @@ function getReservation(confirmation_code){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['reservation']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['reservation']);
+        }
       }
     });
   });

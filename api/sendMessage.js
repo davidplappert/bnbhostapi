@@ -2,33 +2,28 @@ var request = require("request");
 var promise = require('bluebird');
 var config = require('../config');
 
-function getMessageThread(thread_id,limit=50,offset=0){
+function sendMessage(thread_id, message){
   var options = {
-    method: 'GET',
-    url: 'https://api.airbnb.com/v2/threads/' + thread_id,
+    method: 'POST',
+    url: 'https://api.airbnb.com/v2/messages',
     headers:JSON.parse(JSON.stringify(config['bnbhostapi']['headers'])),
-    qs: {
-      _limit:limit,
-      _ofset:offset,
-      selected_inbox_type: 'host',
-      _format: 'for_messaging_sync_with_posts'
-    },
+    body: JSON.stringify({
+      "message":message,
+      "thread_id":thread_id
+    }),
     gzip: true,
   };
+  console.log(options);
   return new promise(function(resolve, reject) {
     request(options, function (error, response, body) {
       if (error){
         reject(error);
       }else{
         body = JSON.parse(body);
-        if (body['error_code']){
-          reject(body);
-        }else{
-          resolve(body['thread']);
-        }
+        resolve(body);
       }
     });
   });
 }
 
-module.exports = getMessageThread;
+module.exports = sendMessage;

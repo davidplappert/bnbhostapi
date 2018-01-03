@@ -22,7 +22,11 @@ function getListings(limit=50,offset=0){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['listings']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['listings']);
+        }
       }
     });
   });

@@ -18,7 +18,11 @@ function getListings(listing_id){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['listing']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['listing']);
+        }
       }
     });
   });

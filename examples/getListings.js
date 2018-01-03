@@ -1,11 +1,13 @@
 var bnbhostapi = require('../bnbhostapi');
 
-bnbhostapi.getListings().then(function(listings){
-  var index;
-  for (index = 0; index < listings.length; ++index) {
-    var listing = listings[index];
-    bnbhostapi.getListing(listing['id']).then(function(listing_detailed){
-      console.log(listing_detailed);
-    });
-  }
+bnbhostapi.getListings()
+.each(function(listing){
+  bnbhostapi.getListing(listing['id'])
+  .then(function(listing_detailed){
+    console.log(listing_detailed);
+  }).catch(function(err){
+    console.log('error', err);
+  });
+}).catch(function(err){
+  console.log('error', error);
 });

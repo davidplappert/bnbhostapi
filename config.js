@@ -5,9 +5,10 @@ var bnbhostapi = {
   headers: {
     'cache-control': 'no-cache',
     'user-agent': 'Airbnb/17.50 iPad/11.2.1 Type/Tablet',
+    'content-type': 'application/json',
     'accept': 'application/json',
     'accept-encoding': 'br, gzip, deflate',
-    'accept-language': 'en',
+    'accept-language': 'en-us',
     'x-airbnb-oauth-token': process.env.bnbhostapi_oauthtoken,
     'x-airbnb-api-key': '915pw2pnf4h1aiguhph5gc5b2',
     'x-airbnb-locale': 'en',

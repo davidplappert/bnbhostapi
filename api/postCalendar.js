@@ -63,7 +63,11 @@ function postCalendar(listing_id, date, daily_price=null, smart_pricing_override
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body);
+        }
       }
     });
   });

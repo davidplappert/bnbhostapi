@@ -5,7 +5,7 @@ module.exports = {
   getListing: require('./api/getListing'),
   getMessageThreads: require('./api/getMessageThreads'),
   getMessageThread: require('./api/getMessageThread'),
-  sendMessages: require('./api/sendMessages'),
+  sendMessage: require('./api/sendMessage'),
   getReservation: require('./api/getReservation'),
   getPayouts: require('./api/getPayouts'),
   getUser: require('./api/getUser'),

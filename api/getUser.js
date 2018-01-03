@@ -18,7 +18,11 @@ function getUser(user_id){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['user']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['user']);
+        }
       }
     });
   });

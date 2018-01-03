@@ -29,7 +29,11 @@ function getCalendar(listing_id,start_date=null,end_date=null){
         reject(error);
       }else{
         body = JSON.parse(body);
-        resolve(body['calendar']);
+        if (body['error_code']){
+          reject(body);
+        }else{
+          resolve(body['calendar']);
+        }
       }
     });
   });
