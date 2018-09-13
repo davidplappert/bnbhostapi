@@ -19,8 +19,8 @@ I, David Plappert, am an Airbnb Superhost. I, also, want to be able to build too
 ### To set this API up, follow these steps:
 I assume you have node installed (nvm maybe?) and that you have a listing on AirBnb.
 1) `npm install bnbhostapi` (or `git clone git@github.com:davidplappert/bnbhostapi.git && npm install`)
-2) `export bnbhostapi_username = xxxxxxx` (replace with your email)
-3) `export bnbhostapi_password = xxxxxxx` (replace with your password)
+2) `export bnbhostapi_username='xxxxxxx'` (replace with your email)
+3) `export bnbhostapi_password='xxxxxxx'` (replace with your password)
 4) `node examples/login.js` (this generates a oauth token we need for the rest of the api calls)
 5) `export bnbhostapi_oauthtoken = xxxxxx` (output from the above script)
 6) `node examples/getPayouts.js` (to make sure your setup is correct).
